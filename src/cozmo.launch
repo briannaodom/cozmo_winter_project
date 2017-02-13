@@ -24,6 +24,8 @@
 
   	<node name="ar_tag_tracking_node" pkg="cozmo_files" type="ar_tag_tracking.py"/>
 
+  	<node pkg="tf" type="static_transform_publisher" name="mav_to_camera" output="screen" args="0 0 0 0.785398163 0 0 webcam_driver camera 10" />
+
 </launch>
 
 
