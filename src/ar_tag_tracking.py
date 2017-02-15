@@ -12,21 +12,21 @@ def ar_tag_track(data):
         if movement_type == 0:
             return
         else:
-            if movement_type == 3:
+            if movement_type == 3333:
                 p.header.frame_id = 'follow'
 
-            elif movement_type == 4:
+            elif movement_type == 4444:
+                p.header.frame_id = 'follow'
+
+            elif movement_type == 5555:
                 p.header.frame_id = 'stop'
 
-        p.position.x = m.pose.pose.point.x
-        p.position.y = m.pose.pose.point.y
-        p.position.z = m.pose.pose.point.z
-
-        print p
+        p.position.x = m.pose.pose.position.x
+        p.position.y = m.pose.pose.position.y
+        p.position.z = m.pose.pose.position.z
 
         ar_tag_pub.publish(p)
 
-        return
 
 if __name__ == '__main__':
     try:
