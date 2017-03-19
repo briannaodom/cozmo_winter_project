@@ -1,7 +1,7 @@
 cozmo\_winter\_project 
 ====================
 
-![Cozmo](https://www.engadget.com/2016/07/11/anki-cozmo-sdk// "Meet Cozmo, the follower!")
+![Meet Cozmo, the follower!](https://www.engadget.com/2016/07/11/anki-cozmo-sdk//)
 #### Objective:
 
 Use [Cozmo](https://anki.com/en-us/cozmo) a mini toy robot created by the company [ANKI] based in California to follow an ar tag attached to the back of an RC car.
