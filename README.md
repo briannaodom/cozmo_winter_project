@@ -1,7 +1,7 @@
 cozmo\_winter\_project 
 ====================
 
-![Meet Cozmo, The Ultimate Follower!]((https://s.aolcdn.com/hss/storage/midas/fe249551d88d3ce0c86c7bb0573b9820/204057074/Anki+Cozmo+Still2.jpg)
+![Meet Cozmo, The Ultimate Follower!](https://s.aolcdn.com/hss/storage/midas/fe249551d88d3ce0c86c7bb0573b9820/204057074/Anki+Cozmo+Still2.jpg)
 
 #### Objective:
 
@@ -62,7 +62,7 @@ The above can be viewed in the [cozmo.launch](https://github.com/briannaodom/coz
 After defining these arguments, _ar_track_alvar_ will publish out marker data which can be looked at by looked at through running
 ```rostopic echo /ar_pose_marker```
 
-When a marker is placed in front of Cozmo's camera, this data should change relative to location of the marker and Cozmo's camera.
+When a marker is placed in front of Cozmo's camera, the pose data should change due to the marker changing position relative to Cozmo's camera. 
 
 #### Ar_tag_tracking.py Node
 
