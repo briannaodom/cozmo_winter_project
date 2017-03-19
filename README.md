@@ -6,6 +6,8 @@ cozmo\_winter\_project
 #### Objective:
 
 Use [Cozmo](https://anki.com/en-us/cozmo), a mini toy robot created by the company [ANKI] based in California, to follow an ar tag attached to the back of an RC car.
+=======
+
 
 #### Goals for Cozmo: 
 
@@ -84,10 +86,6 @@ an arduino and the the PID is for basic line following.
 
 2. [![](https://i.ytimg.com/vi/4Y7zG48uHRo/maxresdefault.jpg)](https://www.youtube.com/watch?v=4Y7zG48uHRo) Click the image above to watch a video that provides visual footage using a small scaled car-like device to help understand how the proportional, integral, and derivative gains will work individually and in unison to align and adjust Cozmo's position in relation to the RC car. 
 
-#### Cozmo_driver.py Node
-
-The [Cozmo_driver](
-
 #### To Dos
 
 1. Finish the PID controller
@@ -95,13 +93,4 @@ The [Cozmo_driver](
 3. Figure out the proper equation to use for Cozmo's rotational velocity around the z axis
 4. Use in the _twist_callback function written in the _cozmo_driver_ node instead of the drive_straight function possibly by assigning the distance Cozmo should travel
 5. Account for Cozmo's behavior if he loses sight of the ar tag
-
-
-
-
-
-
-
-
-
 
