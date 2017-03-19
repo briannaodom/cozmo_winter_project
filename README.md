@@ -35,9 +35,9 @@ Thus, it is best to calibrate Cozmo's camera by following the appropritate steps
 The easiest way to calibrate Cozmo would be to run [cozmo.launch](https://github.com/briannaodom/cozmo_winter_project/blob/master/src/cozmo.launch) which will run the [cozmo_driver](https://github.com/OTL/cozmo_driver/blob/master/nodes/cozmo_driver.py) node. From this, Cozmo's camera will be publishing out raw image data. 
 
 To start calibration example:
-'''rosrun camera_calibration cameracalibrator.py --size  8x6 --square 0.108 image:=/cozmo_camera/image camera:=/cozmo_camera'''
+```rosrun camera_calibration cameracalibrator.py --size  8x6 --square 0.108 image:=/cozmo_camera/image camera:=/cozmo_camera```
 
 If the above example gives an error, check that the Cozmo's camera info is being published
-'''rostopic list''' or '''rostopic echo /cozmo_camera/image'''
+```rostopic list```` or ````rostopic echo /cozmo_camera/image```
 
 Note: The number of (m-1)x(n-1) squares and size of each square (in mm) will depend on the checkboard used.
