@@ -1,12 +1,3 @@
-cozmo\_winter\_project 
-====================
-
-![Meet Cozmo, The Ultimate Follower!](https://s.aolcdn.com/hss/storage/midas/fe249551d88d3ce0c86c7bb0573b9820/204057074/Anki+Cozmo+Still2.jpg)
-
-#### Objective:
-
-Use [Cozmo](https://anki.com/en-us/cozmo) a mini toy robot created by the company [ANKI] based in California to follow an ar tag attached to the back of an RC car.
-
 #### Goals for Cozmo: 
 
 1. Maintain the appropriate distance and speed for Cozmo to follow the RC car. 
@@ -77,7 +68,20 @@ The [follow.py] node subscribes from the tag_position topic being published by t
 Also, a PID controller is being created to account for error in Cozmo's movements in relation to the ar tag. This PID value will be calculated in the calc_PID function and then be used in the   
 cozmo_follow function to decrease the amount of error in his movement. For instance, we can use the integral term to decrease the amount of oscillation or pausing in each cycle between Cozmo and the RC car as he continuously calculates new velocities.
 
-This [blog post](http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/) gives a good basis in understanding PID and implementing it, even though the code is written for 
+#### Sources For PID Explanations and Implementation
+
+A [blog post](http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/) written on the [brettbeauregard](http://brettbeauregard.com/blog/) project blog's site gives a good basis in understanding PID and implementing it, even though the code is written for 
 an arduino and the the PID is for basic line following. 
 
-This [![](https://i.ytimg.com/vi/4Y7zG48uHRo/maxresdefault.jpg)](https://www.youtube.com/watch?v=4Y7zG48uHRo) as well provides visual footage using a small scaled car-like device to help understand how the proportional, integral, and derivative gains will work individually and in unison to align and adjust Cozmo's position in relation to the RC car. 
+[![](https://i.ytimg.com/vi/4Y7zG48uHRo/maxresdefault.jpg)](https://www.youtube.com/watch?v=4Y7zG48uHRo) Click the image above to watch a video that provides visual footage using a small scaled car-like device to help understand how the proportional, integral, and derivative gains will work individually and in unison to align and adjust Cozmo's position in relation to the RC car. 
+
+
+
+#### To Dos
+
+1. Finish the PID controller
+2. Figure out the proper equations to use for Cozmo's linear velocity in the x and y directions 
+3. Figure out the proper equation to use for Cozmo's rotational velocity around the z axis
+4. Use in the function instead written in the _cozmo_driver_ node instead of the drive_straight function possibly by assigning the distance Cozmo should travel
+5. Account for Cozmo's behavior if he loses site of the ar tag
+
