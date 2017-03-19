@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(cozmo_files)
+project(cozmo_winter_project)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -43,7 +43,7 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add "message_runtime" and every package in MSG_DEP_SET to
 ##     
 
-(CATKIN_DEPENDS ...)
+#(CATKIN_DEPENDS )
 ##   * uncomment the add_*_files sections below as needed
 ##     and list every .msg/.srv/.action file to be processed
 ##   * uncomment the generate_messages entry below
@@ -72,11 +72,11 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
-    DEPENDENCIES
-    std_msgs
-    geometry_msgs
-    sensor_msgs
-    ar_track_alvar_msgs
+    #DEPENDENCIES
+    #std_msgs
+    #geometry_msgs
+    #sensor_msgs
+    #ar_track_alvar_msgs
 # )
 
 ################################################
