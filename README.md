@@ -38,6 +38,6 @@ To start calibration example:
 ```rosrun camera_calibration cameracalibrator.py --size  8x6 --square 0.108 image:=/cozmo_camera/image camera:=/cozmo_camera```
 
 If the above example gives an error, check that the Cozmo's camera info is being published
-```rostopic list```` or ````rostopic echo /cozmo_camera/image```
+```rostopic list``` or ```rostopic echo /cozmo_camera/image```
 
 Note: The number of (m-1)x(n-1) squares and size of each square (in mm) will depend on the checkboard used.
