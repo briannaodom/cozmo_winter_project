@@ -1,3 +1,6 @@
+cozmo\_winter\_project 
+====================
+
 ![Meet Cozmo, The Ultimate Follower!](https://s.aolcdn.com/hss/storage/midas/fe249551d88d3ce0c86c7bb0573b9820/204057074/Anki+Cozmo+Still2.jpg)
 
 #### Objective:
@@ -63,6 +66,18 @@ When a marker is placed in front of Cozmo's camera, the pose data should change 
 
 #### Ar_tag_tracking.py Node
 
-The [follow node]() will be used to give each marker their own unique [frame_id](http://docs.ros.org/fuerte/api/std_msgs/html/msg/Header.html) and used to receive the [poses](http://docs.ros.org/jade/api/geometry_msgs/html/msg/Pose.html) of the marker's in the cartesian plane. 
+The [follow.py]() node will be used to give each marker their own unique [frame_id](http://docs.ros.org/fuerte/api/std_msgs/html/msg/Header.html) and used to receive the [poses](http://docs.ros.org/jade/api/geometry_msgs/html/msg/Pose.html) of the marker's in the cartesian plane. 
 
 This data will be published as tag_position and be used by the following Follow.py node to determine how Cozmo will react to the changes in the RC car's position based on Cozmo's distance from the ar tag. 
+
+#### Follow.py Node
+
+The [follow.py] node subscribes from the tag_position topic being published by the _ar_tag_tracking.py_ node and calculates the distance from the tag and turns this into the velocity Cozmo should be moving in the x direction. If the distance between Cozmo and the RC car, gets closer to 0, Cozmo will slow down, and if the distance increases between them, he will speed up. Also, if the distance becomes negative this means the RC car is reversing, thus Cozmo should back up as well. 
+
+Also, a PID controller is being created to account for error in Cozmo's movements in relation to the ar tag. This PID value will be calculated in the calc_PID function and then be used in the   
+cozmo_follow function to decrease the amount of error in his movement. For instance, we can use the integral term to decrease the amount of oscillation or pausing in each cycle between Cozmo and the RC car as he continuously calculates new velocities.
+
+This [blog post](http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/) gives a good basis in understanding PID and implementing it, even though the code is written for 
+an arduino and the the PID is for basic line following. 
+
+This [![](https://i.ytimg.com/vi/4Y7zG48uHRo/maxresdefault.jpg)](https://www.youtube.com/watch?v=4Y7zG48uHRo) as well provides visual footage using a small scaled car-like device to help understand how the proportional, integral, and derivative gains will work individually and in unison to align and adjust Cozmo's position in relation to the RC car. 
