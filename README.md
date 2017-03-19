@@ -41,3 +41,24 @@ If the above example gives an error, check that the Cozmo's camera info is being
 ```rostopic list``` or ```rostopic echo /cozmo_camera/image```
 
 Note: The number of (m-1)x(n-1) squares and size of each square (in mm) will depend on the checkboard used.
+
+#### AR Tag Tracking
+
+In order to subscribe from ar_track_alvar topic, the marker size, new marker error, track error, camera image and info topics and output frame need to be defined. A good description on how to assign the first three arguments can be found on ar_track_alvar [site](http://wiki.ros.org/ar_track_alvar). The latter three arguments, can be defined as below.
+
+The camera image should be defined as ```cozmo_camera/image```
+The camera info should be defined as ```cozmo_camera/camera_info```
+The output frame should be defined as ```cozmo_camera```
+
+The above can be viewed in the [cozmo.launch](https://github.com/briannaodom/cozmo_winter_project/blob/master/src/cozmo.launch) file.
+
+After defining these arguments, ar_track_alvar will publish out marker data which can be looked at by looked at through running
+```rostopic echo /ar_pose_marker```
+
+When a marker is placed in front of cozmo's camera, this data should change relative to location of the marker and cozmo's camera.
+
+#### Ar_tag_tracking.py Node
+
+The [Follow node]() will be used to give each marker their own unique [frame_id](http://docs.ros.org/fuerte/api/std_msgs/html/msg/Header.html) and used to receive the [poses](http://docs.ros.org/jade/api/geometry_msgs/html/msg/Pose.html) of the marker's in the cartesian plane. 
+
+This data will be published as tag_position and be used by the following Follow.py node which 
