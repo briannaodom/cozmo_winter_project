@@ -1,6 +1,7 @@
-cozmo\_winter\_project
+cozmo\_winter\_project 
 ====================
 
+![Cozmo](https://www.cnet.com/products/anki-cozmo/preview/ "Meet Cozmo, the follower!")
 #### Objective:
 
 Use [Cozmo](https://anki.com/en-us/cozmo) a mini toy robot created by the company [ANKI] based in California to follow an ar tag attached to the back of an RC car.
@@ -62,3 +63,4 @@ When a marker is placed in front of cozmo's camera, this data should change rela
 The [follow node]() will be used to give each marker their own unique [frame_id](http://docs.ros.org/fuerte/api/std_msgs/html/msg/Header.html) and used to receive the [poses](http://docs.ros.org/jade/api/geometry_msgs/html/msg/Pose.html) of the marker's in the cartesian plane. 
 
 This data will be published as tag_position and be used by the following Follow.py node to determine how Cozmo will react to the changes in the RC car's position based it's distance from the ar tag. 
+
