@@ -1,6 +1,3 @@
-cozmo\_winter\_project 
-====================
-
 ![Meet Cozmo, The Ultimate Follower!](https://s.aolcdn.com/hss/storage/midas/fe249551d88d3ce0c86c7bb0573b9820/204057074/Anki+Cozmo+Still2.jpg)
 
 #### Objective:
@@ -68,4 +65,4 @@ When a marker is placed in front of Cozmo's camera, the pose data should change 
 
 The [follow node]() will be used to give each marker their own unique [frame_id](http://docs.ros.org/fuerte/api/std_msgs/html/msg/Header.html) and used to receive the [poses](http://docs.ros.org/jade/api/geometry_msgs/html/msg/Pose.html) of the marker's in the cartesian plane. 
 
-This data will be published as tag_position and be used by the following Follow.py node to determine how Cozmo will react to the changes in the RC car's position based it's distance from the ar tag. 
+This data will be published as tag_position and be used by the following Follow.py node to determine how Cozmo will react to the changes in the RC car's position based on Cozmo's distance from the ar tag. 
