@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 import rospy
-from std_msgs.msg import Int32
 from geometry_msgs.msg import PointStamped
-from ar_track_alvar_msgs.msg import AlvarMarkers, AlvarMarker
+from ar_track_alvar_msgs.msg import AlvarMarkers
 
 
-def ar_tag_track(data):
+def ar_tag_track(marker_info):
     p = PointStamped()
-    for m in data.markers:
+    for m in marker_info.markers:
         movement_type = m.id
         if movement_type == 0:
             return
@@ -21,11 +20,12 @@ def ar_tag_track(data):
             elif movement_type == 5555:
                 p.header.frame_id = 'stop'
 
-        p.position.x = m.pose.pose.position.x
-        p.position.y = m.pose.pose.position.y
-        p.position.z = m.pose.pose.position.z
-
+        p.point.x = m.pose.pose.position.x
+        p.point.y = m.pose.pose.position.y
+        p.point.z = m.pose.pose.position.z
         ar_tag_pub.publish(p)
+
+    return p
 
 
 if __name__ == '__main__':
