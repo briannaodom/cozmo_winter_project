@@ -6,8 +6,6 @@ cozmo\_winter\_project
 #### Objective:
 
 Use [Cozmo](https://anki.com/en-us/cozmo), a mini toy robot created by the company [ANKI] based in California, to follow an ar tag attached to the back of an RC car.
-=======
-
 
 #### Goals for Cozmo: 
 
@@ -16,6 +14,7 @@ Use [Cozmo](https://anki.com/en-us/cozmo), a mini toy robot created by the compa
 3. Have cozmo account for changes in direction and speed of the RC car.
 
 #### Materials Needed:
+
 1. Cozmo, which can be bought on [Amazon](https://www.amazon.com/Anki-000-00048-Cozmo/dp/B01GA1298S)
 2. RC Car, which also can be bought on [Amazon](https://www.amazon.com/RW-Lamborghini-Veneno-Remote-Control/dp/B01A5NZAE2/ref=sr_1_5?s=toys-and-games&ie=UTF8&qid=1489929175&sr=1-5&keywords=RC+car)
 3. 6 double A batteries
@@ -68,15 +67,15 @@ When a marker is placed in front of Cozmo's camera, the pose data should change 
 
 #### Ar_tag_tracking.py Node
 
-The [follow.py]() node will be used to give each marker their own unique [frame_id](http://docs.ros.org/fuerte/api/std_msgs/html/msg/Header.html) and used to receive the [poses](http://docs.ros.org/jade/api/geometry_msgs/html/msg/Pose.html) of the marker's in the cartesian plane. 
+The [follow.py](https://github.com/briannaodom/cozmo_driver/blob/master/nodes/follow.py) node will be used to give each marker their own unique [frame_id](http://docs.ros.org/fuerte/api/std_msgs/html/msg/Header.html) and used to receive the [poses](http://docs.ros.org/jade/api/geometry_msgs/html/msg/Pose.html) of the marker's in the cartesian plane. 
 
 This data will be published as tag_position and be used by the following Follow.py node to determine how Cozmo will react to the changes in the RC car's position based on Cozmo's distance from the ar tag. 
 
 #### Follow.py Node
 
-The [follow.py] node subscribes from the tag_position topic being published by the _ar_tag_tracking.py_ node and calculates the distance from the tag and turns this into the velocity Cozmo should be moving in the x direction. If the distance between Cozmo and the RC car, gets closer to 0, Cozmo will slow down, and if the distance increases between them, he will speed up. Also, if the distance becomes negative this means the RC car is reversing, thus Cozmo should back up as well. 
+The [follow.py](https://github.com/briannaodom/cozmo_driver/blob/master/nodes/follow.py) node subscribes from the tag_position topic being published by the _ar_tag_tracking.py_ node and calculates the distance from the tag and turns this into the velocity Cozmo should be moving in the x direction. If the distance between Cozmo and the RC car, gets closer to 0, Cozmo will slow down, and if the distance increases between them, he will speed up. Also, if the distance becomes negative this means the RC car is reversing, thus Cozmo should back up as well. 
 
-Also, a PID controller is being created to account for error in Cozmo's movements in relation to the ar tag. This PID value will be calculated in the calc_PID function and then be used in the   
+Also, a PID controller is being created to account for error in Cozmo's movements in relation to the ar tag. This PID value will be calculated in the calc_PID function and then be used in the
 cozmo_follow function to decrease the amount of error in his movement. For instance, we can use the integral term to decrease the amount of oscillation or pausing in each cycle between Cozmo and the RC car as he continuously calculates new velocities.
 
 #### Sources For PID Explanations and Implementation
@@ -88,9 +87,11 @@ an arduino and the the PID is for basic line following.
 
 #### Cozmo_driver.py Node
 
-The [cozmo_driver.py] node written by Takashi Ogura, integrates ROS and Cozmo to publish out various topics such as odometry and imu as well as subscribe from various topics to increase the functionality of Cozmo and allow programmers to execute different programs that would be otherwise hard to implement as Cozmo has its own SDK and was built with only python in mind. 
+The [cozmo_driver.py](https://github.com/OTL/cozmo_driver/blob/master/nodes/cozmo_driver.py) node written by Takashi Ogura, integrates ROS and Cozmo to publish out various topics such as odometry and imu as well as subscribe from various topics to increase the functionality of Cozmo and allow programmers to execute different programs that would be otherwise hard to implement as Cozmo has its own SDK and was built with only python in mind. 
 
-I added a twist subscriber that subscribes from the cmd_vel topic being published from the _follow.py_ node. This takes the calculated velocities and publishes them to the drive_straight function. Cozmo will drive 150 mm and in that time try to follow the ar tag.
+I added a twist subscriber to [cozmo_driver.py](https://github.com/briannaodom/cozmo_driver/blob/master/nodes/cozmo_driver.py) in my repository that subscribes from the cmd_vel topic being published from the _follow.py_ node. This takes the calculated velocities and publishes them to the drive_straight function. Cozmo will drive 150 mm and in that time try to follow the ar tag.
+
+
 
 #### To Dos
 
