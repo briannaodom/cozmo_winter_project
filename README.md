@@ -85,6 +85,8 @@ an arduino and the the PID is for basic line following.
 
 2. [![](https://i.ytimg.com/vi/4Y7zG48uHRo/maxresdefault.jpg)](https://www.youtube.com/watch?v=4Y7zG48uHRo) Click the image above to watch a video that provides visual footage using a small scaled car-like device to help understand how the proportional, integral, and derivative gains will work individually and in unison to align and adjust Cozmo's position in relation to the RC car. 
 
+3. A [PID control](https://www.robotix.in/tutorial/avr/pid/) site by Robotix that defines in words and puts in perspective what PID really does and means.
+
 #### Cozmo_driver.py Node
 
 The [cozmo_driver.py](https://github.com/OTL/cozmo_driver/blob/master/nodes/cozmo_driver.py) node written by Takashi Ogura, integrates ROS and Cozmo to publish out various topics such as odometry and imu as well as subscribe from various topics to increase the functionality of Cozmo and allow programmers to execute different programs that would be otherwise hard to implement as Cozmo has its own SDK and was built with only python in mind. 
@@ -96,8 +98,8 @@ I added a twist subscriber to [cozmo_driver.py](https://github.com/briannaodom/c
 #### To Dos
 
 1. Finish the PID controller
-2. Figure out the proper equations to use for Cozmo's linear velocity in the x and y directions 
-3. Figure out the proper equation to use for Cozmo's rotational velocity around the z axis
+2. Figure out the proper [equations](http://users.isr.ist.utl.pt/~mir/cadeiras/robmovel/Kinematics.pdf) to use for Cozmo's linear velocity in the x and y directions 
+3. Figure out the proper [equation](http://faculty.salina.k-state.edu/tim/robotics_sg/Control/kinematics/unicycle.html) to use for Cozmo's rotational velocity around the z axis
 4. Use in the _twist_callback function written in the _cozmo_driver_ node instead of the drive_straight function possibly by assigning the distance Cozmo should travel
 5. Account for Cozmo's behavior if he loses sight of the ar tag
 
