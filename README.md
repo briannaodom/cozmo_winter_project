@@ -100,6 +100,6 @@ I added a twist subscriber to [cozmo_driver.py](https://github.com/briannaodom/c
 1. Finish the PID controller
 2. Figure out the proper [equations](http://users.isr.ist.utl.pt/~mir/cadeiras/robmovel/Kinematics.pdf) to use for Cozmo's linear velocity in the x and y directions 
 3. Figure out the proper [equation](http://faculty.salina.k-state.edu/tim/robotics_sg/Control/kinematics/unicycle.html) to use for Cozmo's rotational velocity around the z axis
-4. Use in the _twist_callback function written in the _cozmo_driver_ node instead of the drive_straight function possibly by assigning the distance Cozmo should travel
+4. Use in the [_twist_callback](https://github.com/OTL/cozmo_driver/blob/master/nodes/cozmo_driver.py) function written in the _cozmo_driver_ node instead of the drive_straight function possibly by assigning the distance Cozmo should travel
 5. Account for Cozmo's behavior if he loses sight of the ar tag
 
