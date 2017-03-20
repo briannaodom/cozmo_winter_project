@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   ar_track_alvar_msgs
   message_generation
+  cozmo_driver
 )
 
 ## System dependencies are found with CMake's conventions
