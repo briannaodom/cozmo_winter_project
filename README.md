@@ -1,7 +1,7 @@
 cozmo\_winter\_project 
 ====================
 
-[]()
+[Cozmo](https://github.com/briannaodom/cozmo_winter_project/blob/master/IMG_1155.JPG)
 
 #### Objective:
 
