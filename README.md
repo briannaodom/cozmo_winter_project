@@ -1,7 +1,7 @@
 cozmo\_winter\_project 
 ====================
 
-![Meet Cozmo, The Ultimate Follower!](https://s.aolcdn.com/hss/storage/midas/fe249551d88d3ce0c86c7bb0573b9820/204057074/Anki+Cozmo+Still2.jpg)
+[]()
 
 #### Objective:
 
